@@ -4,4 +4,4 @@ Here are two diagrams:
 
 ![ERD](ERD.png)
 
-![Activity Diagram](Activity_Diagram.png)
+![Activity Diagram](activitydiaram.png)

@@ -1,2 +1,3 @@
-﻿  main.cpp
+﻿  level.cpp
+C:\Users\T470s\source\repos\angry-birds\angry-birds\level.cpp(107,1): warning C4715: 'Level::getGameObject': not all control paths return a value
   angry-birds.vcxproj -> C:\Users\T470s\source\repos\angry-birds\x64\Debug\angry-birds.exe

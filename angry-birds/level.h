@@ -21,11 +21,13 @@ public:
     void update(float deltaTime);
     void draw();
     void reset();
-
+    GameObject* getGameObject(int idx);
+    int getObjectCount();
     bool levelComplete() const;
 
     void save(std::ofstream& out);
     void load(std::ifstream& in);
+    ~Level();
 
 };
 

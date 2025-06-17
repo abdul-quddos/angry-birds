@@ -31,10 +31,11 @@ void Level::draw()
 }
 
 void Level::reset() {
-    for (int i = 0; i < gameObjects.size(); ++i)
-        delete gameObjects[i];
+    for (int i = 0; i < gameObjects.size(); i++) {
+        delete gameObjects[i];  // Properly delete each object
+    }
     gameObjects.clear();
-    bird = nullptr;
+    bird = nullptr;  // Reset pointer to avoid dangling reference
     isLevelComplete = false;
 }
 
@@ -42,7 +43,15 @@ bool Level::levelComplete() const {
     return isLevelComplete;
 }
 
-
+GameObject* Level::getGameObject(int idx)
+{
+    if (idx < gameObjects.size())
+        return gameObjects[idx];
+}
+int Level::getObjectCount()
+{
+    return gameObjects.size();
+}
 void Level::save(std::ofstream& out) {
     int objectCount = gameObjects.size();
     out.write((char*)&objectCount, sizeof(objectCount));
@@ -89,4 +98,8 @@ void Level::load(std::ifstream& in) {
             gameObjects.push(obj);
         }
     }
+}
+
+Level::~Level() {
+    reset(); 
 }

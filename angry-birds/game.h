@@ -10,7 +10,7 @@
 
 class Game {
 private:
-    Level level;
+    Level* level;
     GameState gameState;
     Logger logger;
     ScoreManager<int> scoreManager;
@@ -23,8 +23,11 @@ public:
     void saveGame(const char* filename);
     void loadGame(const char* filename);
 
+
+    int getCurrentScore() const;
     Level& getCurrentLevel();
     GameState& getGameState();
+    ~Game();
 };
 
 #endif // GAME_H
